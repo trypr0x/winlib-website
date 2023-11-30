@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+.mbver {
+    visibility: hidden;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+.intro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.content {
+    display: inline-block;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: hidden;
+    background-color:rgba(0,0,0,0.3);
+    /*animation: funhover .5s;*/
+    text-align: left;
+    padding-left:30px;
+    /*background-color: rgba(0,37,37);*/
+    animation: fadeInUp 1s ease-out;
+}
+
+.content:nth-of-type(odd) {
+    background-color: rgb(0, 37, 37);
+}
+
+.content img {
+    margin-right: 15px;
+    float: left;
+}
+.content h3,
+.content p{
+    margin-left: 15px;  
+    display: block;
+    margin: 2px 0 0 0;
+    /*text-align: center;*/
+}
+.button {
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    background-color:rgb(0, 37, 37);
+    text-decoration: none;
+    animation: funhover .25s;
+}
+.button:hover {
+    animation: fhover .25s;
+    background-color: darkcyan;
+}
+
+ul {
+    list-style: none;
+}
+
+@media only screen and (max-width: 750px) {
+    body {
+        padding: 0px;
+    }
+    .footer {
+        visibility: hidden;
+    }
+    .mbver {
+        visibility: visible;
+    }
+    .dver {
+        visibility: hidden;
+    }
+    .button {
+        display:grid;
+        margin: 5px;
+    }
+    .content {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+}
+@keyframes fhover {
+    from {
+        background-color:rgba(0,37,37);
+    }
+    to {
+        background-color: rgba(darkcyan);
+    }
+}
+@keyframes funhover {
+    from {
+        background-color:darkcyan;
+    }
+    to {
+        background-color: rgba(0,37,37);
+    }
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes rotateInDownRight {
+    from {
+        transform: rotate(90deg) translateX(100%) translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: rotate(0) translateX(0) translateY(0);
+        opacity: 1;
+    }
+}
+.maincontent {
+    animation: rotateInDownRight 1.5s;
+}
